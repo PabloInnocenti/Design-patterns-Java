@@ -4,7 +4,7 @@ package com.pabloinnocenti;
  * Hello world!
  *
  */
-public class App 
+public class Robots 
 {
     public static void main( String[] args )
     {

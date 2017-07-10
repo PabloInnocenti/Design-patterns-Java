@@ -9,7 +9,7 @@
 
 ## Objetivos Secundarios
 
-# Metodología del proyecto
+# MeTODOlogía del proyecto
 * Desarrollo por etapas.
 
 # Roadmap del Proyecto
@@ -21,63 +21,74 @@
 :rocket: Introduction
 =================
 
-Design patterns are solutions to recurring problems; **guidelines on how to tackle certain problems**. They are not classes, packages or libraries that you can plug into your application and wait for the magic to happen. These are, rather, guidelines on how to tackle certain problems in certain situations.
+Los patrones de diseño son soluciones a problemas recurrentes; **maneras sobre cómo abordar ciertos problemas**. No son clases, paquetes o librerias que puedas conectar a tu aplicación y esperar a que ocurra la magia. Estas son, más bien, **guias** sobre cómo abordar ciertos problemas en ciertas situaciones.
 
 > Design patterns are solutions to recurring problems; guidelines on how to tackle certain problems
 
-Wikipedia describes them as
+Wikipedia:
 
 > In software engineering, a software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations.
 
-:warning: Be Careful
------------------
-- Design patterns are not a silver bullet to all your problems.
-- Do not try to force them; bad things are supposed to happen, if done so. Keep in mind that design patterns are solutions **to** problems, not solutions **finding** problems; so don't overthink.
-- If used in a correct place in a correct manner, they can prove to be a savior; or else they can result in a horrible mess of a code.
+Los patrones de diseño pretenden:
 
-Types of Design Patterns
+- Proporcionar catálogos de elementos reusables en el diseño de sistemas software.
+- Evitar la reiteración en la búsqueda de soluciones a problemas ya conocidos y solucionados anteriormente.
+- Formalizar un vocabulario común entre diseñadores.
+- Estandarizar el modo en que se realiza el diseño.
+- Facilitar el aprendizaje de las nuevas generaciones de diseñadores condensando conocimiento ya existente.
+
+Asimismo, no pretenden:
+- Imponer ciertas alternativas de diseño frente a otras.
+- Eliminar la creatividad inherente al proceso de diseño.
+- No es obligatorio utilizar los patrones, solo es aconsejable en el caso de tener el mismo problema o similar que soluciona el patrón, siempre teniendo en cuenta que en un caso particular puede no ser aplicable. "Abusar o forzar el uso de los patrones puede ser un error".
+
+:warning: Consideraciones
+-----------------
+- Los patrones de diseño no son una **bala de plata** para resolver todos los problemas.
+- No trate de forzarl su aplicaion. Hay que tener en cuenta que los patrones de diseño son soluciones ** a ** problemas, no soluciones para ** encontrar ** problemas; Así que no piense demasiado.
+- Si se usan en un lugar correcto de manera correcta, pueden ser o bien un salvador o resultar en un lío horrible con el código.
+
+Tipos de Patrones de Diseño
 -----------------
 
 * [Creational](#creational-design-patterns)
 * [Structural](#structural-design-patterns)
 * [Behavioral](#behavioral-design-patterns)
 
-Creational Design Patterns
+Creational Design Patterns :hammer:
 ==========================
 
-:hammer:
 In plain words
 > Creational patterns are focused towards how to instantiate an object or group of related objects.
 
 Wikipedia says
 > In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
 
- * [Simple Factory](#-simple-factory)
- * [Factory Method](#-factory-method)
- * [Abstract Factory](#-abstract-factory)
- * [Builder](TODO.md)
- * [Prototype](TODO.md)
- * [Singleton](TODO.md)
+ * [Simple Factory](Documentacion/Creational/SimpleFactory.md)
+ * [Factory Method](Documentacion/Creational/FactoryMethod.md)
+ * [Abstract Factory](Documentacion/Creational/AbstractFactory.md)
+ * [Builder](Documentacion/TODO.md)
+ * [Prototype](Documentacion/TODO.md)
+ * [Singleton](Documentacion/TODO.md)
 
 Structural Design Patterns
 ==========================
 
-:package: 
 In plain words
 > Structural patterns are mostly concerned with object composition or in other words how the entities can use each other. Or yet another explanation would be, they help in answering "How to build a software component?"
 
 Wikipedia says
 > In software engineering, structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
 
- * [Adapter](TODO.md)
- * [Bridge](TODO.md)
- * [Composite](TODO.md)
- * [Decorator](TODO.md)
- * [Facade](TODO.md)
- * [Flyweight](TODO.md)
- * [Proxy](TODO.md)
+ * [Adapter](Documentacion/TODO.md)
+ * [Bridge](Documentacion/TODO.md)
+ * [Composite](Documentacion/TODO.md)
+ * [Decorator](Documentacion/TODO.md)
+ * [Facade](Documentacion/TODO.md)
+ * [Flyweight](Documentacion/TODO.md)
+ * [Proxy](Documentacion/TODO.md)
 
-:raising_hand: Behavioral Design Patterns
+Behavioral Design Patterns
 ==========================
 
 In plain words
@@ -86,16 +97,16 @@ In plain words
 Wikipedia says
 > In software engineering, behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
 
-* [Chain of Responsibility](TODO.md)
-* [Iterator](TODO.md)
-* [Command](TODO.md)
-* [Mediator](TODO.md)
-* [Memento](TODO.md)
-* [Observer](TODO.md)
-* [Strategy](TODO.md)
-* [Visitor](TODO.md)
-* [State](TODO.md)
-* [Template Method](TODO.md)
+* [Chain of Responsibility](Documentacion/TODO.md)
+* [Iterator](Documentacion/TODO.md)
+* [Command](Documentacion/TODO.md)
+* [Mediator](Documentacion/TODO.md)
+* [Memento](Documentacion/TODO.md)
+* [Observer](Documentacion/TODO.md)
+* [Strategy](Documentacion/TODO.md)
+* [Visitor](Documentacion/TODO.md)
+* [State](Documentacion/TODO.md)
+* [Template Method](Documentacion/TODO.md)
 
 # Bibliography
 * [design-patterns-for-humans](https://github.com/kamranahmedse/design-patterns-for-humans/blob/master/README.md#-simple-factory)
@@ -104,3 +115,4 @@ Wikipedia says
 * [Design Patterns CD - ADDISON - WESLEY](ISBN13 9780201634983)
 * [Diseño y Arquitectura de Software (2017) - Curso](http://www.uai.edu.ar)
 * [Toon Robot images](http://tooncharacters.com)
+* [Abstract Factory Design Pattern Youtube](https://www.youtube.com/watch?v=xbjAsdAK4xQ#t=23.063268)
