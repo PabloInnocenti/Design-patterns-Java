@@ -1,22 +1,4 @@
-# Version de la Documentacion
-| Author          | Fecha       | Version | Descripcion                                   |
-|:--------------- |:----------- |:-------:|:--------------------------------------------- |
-| Pablo Innocenti | 10/07/2017  | 1.0     | <br>Descripcion<br>Objetivos<br>Marco Teorico<br>Creational Patterns |
-
-# Objetivo Principal
-
-* Describir los distintos patrones de Diseño y realizar ejemplos de implementaciones en JAVA.
-
-## Objetivos Secundarios
-
-# Metodología del proyecto
-* Desarrollo por etapas.
-
-# Roadmap del Proyecto
-* [Informacion y status del proyecto](Documentacion/project.md)
-* [TODO's](Documentacion/TODO.md)
-
-# Conceptos
+[indice](README.md)
 
 :rocket: Introduction
 =================
@@ -42,10 +24,9 @@ Types of Design Patterns
 * [Structural](#structural-design-patterns)
 * [Behavioral](#behavioral-design-patterns)
 
-Creational Design Patterns
+:hammer: Creational Design Patterns
 ==========================
 
-:hammer:
 In plain words
 > Creational patterns are focused towards how to instantiate an object or group of related objects.
 
@@ -59,10 +40,8 @@ Wikipedia says
  * [Prototype](TODO.md)
  * [Singleton](TODO.md)
 
-Structural Design Patterns
+:package: Structural Design Patterns
 ==========================
-
-:package: 
 In plain words
 > Structural patterns are mostly concerned with object composition or in other words how the entities can use each other. Or yet another explanation would be, they help in answering "How to build a software component?"
 
@@ -96,11 +75,3 @@ Wikipedia says
 * [Visitor](TODO.md)
 * [State](TODO.md)
 * [Template Method](TODO.md)
-
-# Bibliography
-* [design-patterns-for-humans](https://github.com/kamranahmedse/design-patterns-for-humans/blob/master/README.md#-simple-factory)
-* [DesignPatterns](https://github.com/OmarElGabry/DesignPatterns)
-* [java-design-patterns](https://github.com/iluwatar/java-design-patterns/tree/master/abstract-factory)
-* [Design Patterns CD - ADDISON - WESLEY](ISBN13 9780201634983)
-* [Diseño y Arquitectura de Software (2017) - Curso](http://www.uai.edu.ar)
-* [Toon Robot images](http://tooncharacters.com)
