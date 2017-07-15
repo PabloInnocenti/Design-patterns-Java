@@ -26,7 +26,7 @@ Se desea construir una figura que responda a las siguientes caracteristicas:
 * Puede ser un circulo.
 
 ## Class Diagram ##
-![Diagrama](Documentacion/images/diagrams/factorymethod.png)
+![Diagrama](../images/diagrams/factorymethod.png)
 
 
 ## Pasos ##
@@ -147,7 +147,11 @@ public class FactoryPatternMain {
 Usos conocidos del factory Method:
 * java.util.Calendar
 * java.util.ResourceBundle
-* java.text.NumberFormat
+* java.text.NumberFormatCredits
+[iluwatar git](https://github.com/iluwatar/java-design-patterns/tree/master/factory-method)
+[kamranahmedse git](https://github.com/kamranahmedse/design-patterns-for-humans/blob/master/README.md#-factory-method)
+[TutorialsPoint](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)
+[UAI]()
 * java.nio.charset.Charset
 * java.net.URLStreamHandlerFactory
 * java.util.EnumSet

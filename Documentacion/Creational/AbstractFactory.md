@@ -34,7 +34,7 @@ Color:
 * Verde
 
 ## Class Diagram ##
-![Diagrama](Documentacion/images/diagrams/abstractfactorymethod.png)
+![Diagrama](../images/diagrams/abstractfactorymethod.png)
 
 ## Pasos ##
 
