@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.org.edu.asbtractfactory">
+  <ClassDiagramComponents>
+    <Class name="AbstractFactoryMain" package="org.edu.asbtractfactory" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="abstractFactory" type="AbstractFactory" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Shape" package="org.edu.asbtractfactory" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Methods>
+        <Method name="draw" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Class name="Green" package="org.edu.asbtractfactory" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="fill" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Square" package="org.edu.asbtractfactory" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Circle" package="org.edu.asbtractfactory" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Color" package="org.edu.asbtractfactory" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Methods>
+        <Method name="fill" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Class name="Red" package="org.edu.asbtractfactory" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="fill" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Triangle" package="org.edu.asbtractfactory" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ColorFactory" package="org.edu.asbtractfactory" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getShape" returnType="Shape" visibility="public">
+          <Argument type="String" name="shapeType"/>
+        </Method>
+        <Method name="getColor" returnType="Color" visibility="package">
+          <Argument type="String" name="color"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Blue" package="org.edu.asbtractfactory" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="fill" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FactoryProducer" package="org.edu.asbtractfactory" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getFactory" returnType="AbstractFactory" visibility="public" isStatic="true">
+          <Argument type="String" name="choice"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbstractFactory" package="org.edu.asbtractfactory" visibility="public" isAbstract="true" xPosition="920.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getColor" returnType="Color" visibility="package" isAbstract="true">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getShape" returnType="Shape" visibility="package" isAbstract="true">
+          <Argument type="String" name="shape"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ShapeFactory" package="org.edu.asbtractfactory" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getShape" returnType="Shape" visibility="public">
+          <Argument type="String" name="shapeType"/>
+        </Method>
+        <Method name="getColor" returnType="Color" visibility="package">
+          <Argument type="String" name="color"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="org.edu.asbtractfactory.Red" target="org.edu.asbtractfactory.Color"/>
+    <HasRelation name="abstractFactory" source="org.edu.asbtractfactory.AbstractFactoryMain" target="org.edu.asbtractfactory.AbstractFactory" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="org.edu.asbtractfactory.ColorFactory" target="org.edu.asbtractfactory.Color" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="org.edu.asbtractfactory.Green" target="org.edu.asbtractfactory.Color"/>
+    <UseRelation source="org.edu.asbtractfactory.FactoryProducer" target="org.edu.asbtractfactory.AbstractFactory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="org.edu.asbtractfactory.AbstractFactory" target="org.edu.asbtractfactory.Color" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="org.edu.asbtractfactory.ShapeFactory" target="org.edu.asbtractfactory.Color" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="org.edu.asbtractfactory.Square" target="org.edu.asbtractfactory.Shape"/>
+    <IsRelation name="is" source="org.edu.asbtractfactory.ColorFactory" target="org.edu.asbtractfactory.AbstractFactory"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="org.edu.asbtractfactory.Blue" target="org.edu.asbtractfactory.Color"/>
+    <UseRelation source="org.edu.asbtractfactory.AbstractFactory" target="org.edu.asbtractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="org.edu.asbtractfactory.ShapeFactory" target="org.edu.asbtractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="org.edu.asbtractfactory.Triangle" target="org.edu.asbtractfactory.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="org.edu.asbtractfactory.Circle" target="org.edu.asbtractfactory.Shape"/>
+    <IsRelation name="is" source="org.edu.asbtractfactory.ShapeFactory" target="org.edu.asbtractfactory.AbstractFactory"/>
+    <UseRelation source="org.edu.asbtractfactory.ColorFactory" target="org.edu.asbtractfactory.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
