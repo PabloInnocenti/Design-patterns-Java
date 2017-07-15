@@ -145,13 +145,10 @@ public class FactoryPatternMain {
 ```
 
 Usos conocidos del factory Method:
+
 * java.util.Calendar
 * java.util.ResourceBundle
 * java.text.NumberFormatCredits
-[iluwatar git](https://github.com/iluwatar/java-design-patterns/tree/master/factory-method)
-[kamranahmedse git](https://github.com/kamranahmedse/design-patterns-for-humans/blob/master/README.md#-factory-method)
-[TutorialsPoint](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)
-[UAI]()
 * java.nio.charset.Charset
 * java.net.URLStreamHandlerFactory
 * java.util.EnumSet

@@ -118,58 +118,8 @@ public class Blue implements Color {
    }
 }
 ```
-5. Creamos la Factory **ShapeFactory** la cual instancia las subclases **Circle**, **Square** o **Triangle** que implementan Shape acorde al parámetro **shapeType** (Este parámetro en vez de un String, tambien podria tambien implementarse con un enum de JAVA). Creamos la Factory **ColorFactory** la cual instancia las subclases **Red**, **Green** o **Blue** que implementan Color acorde al parámetro **colorType**
 
-  * ShapeFactory
-```
-public class ShapeFactory extends AbstractFactory {
-
-   @Override
-   public Shape getShape(String shapeType){
-      if(shapeType == null){
-         return null;
-      }
-      if(shapeType.equalsIgnoreCase("CIRCLE")){
-         return new Circle();
-      }else if(shapeType.equalsIgnoreCase("TRIANGLE")){
-         return new Triangle();
-      }else if(shapeType.equalsIgnoreCase("SQUARE")){
-         return new Square();
-      }
-      return null;
-   }
-
-   @Override
-   Color getColor(String color) {
-      return null;
-   }
-}
-```
-  * ColorFactory
-```
-public class ColorFactory extends AbstractFactory {
-   @Override
-   public Shape getShape(String shapeType){
-      return null;
-   }
-   @Override
-   Color getColor(String color) {
-      if(color == null){
-         return null;
-      }
-      if(color.equalsIgnoreCase("RED")){
-         return new Red();
-      }else if(color.equalsIgnoreCase("GREEN")){
-         return new Green();
-      }else if(color.equalsIgnoreCase("BLUE")){
-         return new Blue();
-      }
-      return null;
-   }
-}
-```
-
-6. Creamos la clase abstracta AbstractFactory. Notese que su interfaz son 2 metodos **getColor** y **getShape**.
+5. Creamos la clase abstracta AbstractFactory. Notese que su interfaz son 2 metodos **getColor** y **getShape**.
 Esta clase abstracta nos proveera de los objetos **Color** y **Shape**
 ```
 public abstract class AbstractFactory {
@@ -178,7 +128,33 @@ public abstract class AbstractFactory {
 }
 ```
 
-7. Creamos las clases que implementan la *clase abstracta AbstractFactory (Extienden e implemetan la misma).
+6. Creamos la Factory **ShapeFactory** la cual instancia las subclases **Circle**, **Square** o **Triangle** que implementan Shape acorde al parámetro **shapeType** (Este parámetro en vez de un String, tambien podria tambien implementarse con un enum de JAVA). Creamos la Factory **ColorFactory** la cual instancia las subclases **Red**, **Green** o **Blue** que implementan Color acorde al parámetro **colorType**
+
+  * ShapeFactory
+```
+public class ShapeFactory extends AbstractFactory {
+
+   @Override
+   public Shape getShape(String shapeType){
+      if(shapeType == null){
+         return null;
+      }
+      if(shapeType.equalsIgnoreCase("CIRCLE")){
+         return new Circle();
+      }else if(shapeType.equalsIgnoreCase("TRIANGLE")){
+         return new Triangle();
+      }else if(shapeType.equalsIgnoreCase("SQUARE")){
+         return new Square();
+      }
+      return null;
+   }
+
+   @Override
+   Color getColor(String color) {
+      return null;
+   }
+}
+```
   * ColorFactory
 ```
 public class ColorFactory extends AbstractFactory {
@@ -202,30 +178,9 @@ public class ColorFactory extends AbstractFactory {
    }
 }
 ```
-  * ShapeFactory
+
 ```
-public class ShapeFactory extends AbstractFactory {
-   @Override
-   public Shape getShape(String shapeType){
-      if(shapeType == null){
-         return null;
-      }
-      if(shapeType.equalsIgnoreCase("CIRCLE")){
-         return new Circle();
-      }else if(shapeType.equalsIgnoreCase("TRIANGLE")){
-         return new Triangle();
-      }else if(shapeType.equalsIgnoreCase("SQUARE")){
-         return new Square();
-      }
-      return null;
-   }
-   @Override
-   Color getColor(String color) {
-      return null;
-   }
-}
-```
-8. Creamos el generador de para obtener los distintos tipos de fabricas **Shape** o **Color**
+7. Creamos el generador de para obtener los distintos tipos de fabricas **Shape** o **Color**
 ```
 public class FactoryProducer {
    public static AbstractFactory getFactory(String choice){
@@ -239,7 +194,7 @@ public class FactoryProducer {
 }
 ```
 
-9. Creamos la clase que ejecutamos (main method), el cual instacia la factory.
+8. Creamos la clase que ejecutamos (main method), el cual instacia la factory.
 Primero llamamos al metodo **getShape** para obtener una instacia concreta de un objeto de tipo **Circle**, **Square** y **Triangle**.
 Luego llamamos al metodo **getColor** para obtener una instancia concreta de un objeto de tipo **Red**, **Green** o **Blue**.
 
@@ -275,12 +230,18 @@ public class AbstractFactoryMain {
 
 Usos conocidos:
 
-Las Abstract Factory son usadas para Dependency Injection (DI).
-* Datasources
+Las Abstract Factory son muy usadas para Dependency Injection (DI).
+* Datasources (Drivermanager.class) / (Hibernate) / ADO .Net
+* Interfaz al usuario,etc.
+* Spring framework
+
+Consideraciones:
 * You need abstract factory when different polymorphic classes has different instantiation procedure. And you want some module to create instances and use them, without knowing any details of object initialization.
 * In absence of Abstract Factory, Client need to know details of concrete classes. This tight coupling has been removed with Abstract Factory.
 * Now Factory Method exposes an contract, that client has to use. You can add more products to your factory by adding new products, which implement interface exposed by Factory Method.
-* Interfaz al usuario,etc
+* It allows you to introduce an Inversion of Control (IoC) container easily
+* It makes your code more testable as you can mock interfaces
+* It gives you a lot more flexibility when it comes time to change the application (i.e. you can create new implementations without changing the dependent code)
 
 Credits
 [iluwatar git](https://github.com/iluwatar/java-design-patterns/tree/master/factory-method)
