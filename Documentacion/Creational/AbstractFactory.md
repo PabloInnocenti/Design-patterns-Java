@@ -38,19 +38,17 @@ Color:
 
 ## Pasos ##
 
-1. Crear la interfaz **Shape**. Esta definira que las clases que la implementen deben definir el metodo **draw**.
-
-Nota: Esta interfaz tambien puede ser una clase abstacta (patron factory method 2).
+Crear la interfaz **Shape**. Esta definira que las clases que la implementen deben definir el metodo **draw**. Nota: Esta interfaz tambien puede ser una clase abstacta (patron factory method 2).
 
 ```
 public interface Shape {
    void draw();
 }
 ```
-
-2. Creamos las clases **Circle**, **Square** y **Triangle** que implementen la interfaz (o los metodos abstractos de la clase abstracta).
+Creamos las clases **Circle**, **Square** y **Triangle** que implementen la interfaz (o los metodos abstractos de la clase abstracta).
 
   * Square
+
 ```
 public class Square implements Shape {
 
@@ -61,7 +59,8 @@ public class Square implements Shape {
 }
 ```
 
-* Circle
+  * Circle
+
 ```
 public class Circle implements Shape {
 
@@ -72,7 +71,8 @@ public class Circle implements Shape {
 }
 ```
 
-* Triangle
+  * Triangle
+
 ```
 public class Triangle implements Shape {
 
@@ -83,15 +83,18 @@ public class Triangle implements Shape {
 }
 ```
 
-4. Repetimos el paso 1 2 y 3 para la Interfaz **Color** y las clases **Red**, **Green** y **Blue**
+Repetimos el paso 1 2 y 3 para la Interfaz **Color** y las clases **Red**, **Green** y **Blue**
 
   * Color
+
 ```
 public interface Color {
    void fill();
 }
 ```
+
   * Red
+
 ```
 public class Red implements Color {
    @Override
@@ -100,7 +103,9 @@ public class Red implements Color {
    }
 }
 ```
+
   * Green
+
 ```
 public class Green implements Color {
    @Override
@@ -109,7 +114,9 @@ public class Green implements Color {
    }
 }
 ```
+
   * Blue
+
 ```
 public class Blue implements Color {
    @Override
@@ -119,8 +126,9 @@ public class Blue implements Color {
 }
 ```
 
-5. Creamos la clase abstracta AbstractFactory. Notese que su interfaz son 2 metodos **getColor** y **getShape**.
+Creamos la clase abstracta AbstractFactory. Notese que su interfaz son 2 metodos **getColor** y **getShape**.
 Esta clase abstracta nos proveera de los objetos **Color** y **Shape**
+
 ```
 public abstract class AbstractFactory {
    abstract Color getColor(String color);
@@ -128,9 +136,10 @@ public abstract class AbstractFactory {
 }
 ```
 
-6. Creamos la Factory **ShapeFactory** la cual instancia las subclases **Circle**, **Square** o **Triangle** que implementan Shape acorde al parámetro **shapeType** (Este parámetro en vez de un String, tambien podria tambien implementarse con un enum de JAVA). Creamos la Factory **ColorFactory** la cual instancia las subclases **Red**, **Green** o **Blue** que implementan Color acorde al parámetro **colorType**
+Creamos la Factory **ShapeFactory** la cual instancia las subclases **Circle**, **Square** o **Triangle** que implementan Shape acorde al parámetro **shapeType** (Este parámetro en vez de un String, tambien podria tambien implementarse con un enum de JAVA). Creamos la Factory **ColorFactory** la cual instancia las subclases **Red**, **Green** o **Blue** que implementan Color acorde al parámetro **colorType**
 
   * ShapeFactory
+
 ```
 public class ShapeFactory extends AbstractFactory {
 
@@ -155,7 +164,9 @@ public class ShapeFactory extends AbstractFactory {
    }
 }
 ```
+
   * ColorFactory
+
 ```
 public class ColorFactory extends AbstractFactory {
    @Override
@@ -179,8 +190,8 @@ public class ColorFactory extends AbstractFactory {
 }
 ```
 
-```
-7. Creamos el generador de para obtener los distintos tipos de fabricas **Shape** o **Color**
+Creamos el generador de para obtener los distintos tipos de fabricas **Shape** o **Color**
+
 ```
 public class FactoryProducer {
    public static AbstractFactory getFactory(String choice){
@@ -194,7 +205,7 @@ public class FactoryProducer {
 }
 ```
 
-8. Creamos la clase que ejecutamos (main method), el cual instacia la factory.
+Creamos la clase que ejecutamos (main method), el cual instacia la factory.
 Primero llamamos al metodo **getShape** para obtener una instacia concreta de un objeto de tipo **Circle**, **Square** y **Triangle**.
 Luego llamamos al metodo **getColor** para obtener una instancia concreta de un objeto de tipo **Red**, **Green** o **Blue**.
 
@@ -228,24 +239,120 @@ public class AbstractFactoryMain {
 }
 ```
 
-Usos conocidos:
+Usos conocidos / ejemplos:
 
 Las Abstract Factory son muy usadas para Dependency Injection (DI).
 * Datasources (Drivermanager.class) / (Hibernate) / ADO .Net
 * Interfaz al usuario,etc.
-* Spring framework
 
-Consideraciones:
-* You need abstract factory when different polymorphic classes has different instantiation procedure. And you want some module to create instances and use them, without knowing any details of object initialization.
-* In absence of Abstract Factory, Client need to know details of concrete classes. This tight coupling has been removed with Abstract Factory.
-* Now Factory Method exposes an contract, that client has to use. You can add more products to your factory by adding new products, which implement interface exposed by Factory Method.
-* It allows you to introduce an Inversion of Control (IoC) container easily
-* It makes your code more testable as you can mock interfaces
-* It gives you a lot more flexibility when it comes time to change the application (i.e. you can create new implementations without changing the dependent code)
+* JAVA
+ * javax.xml.parsers.DocumentBuilderFactory#newInstance()
+ * javax.xml.transform.TransformerFactory#newInstance()
+ * javax.xml.xpath.XPathFactory#newInstance()
 
-Credits
+```
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+public class DocumentBuilderFactoryDemo {
+  public static void main(String[] args) {
+       // set the provider for DocumentBuilder
+       String provider ="com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
+
+       // create a new DocumentBuilderFactory from an implementation
+       DocumentBuilderFactory factory =DocumentBuilderFactory.newInstance(provider, null);
+       try {
+          // create a new DocumentBuilder
+          DocumentBuilder builder = factory.newDocumentBuilder();
+          // check the configuration for namespace aware
+          System.out.println("" + builder.isNamespaceAware());
+       } catch (ParserConfigurationException ex) {
+          ex.printStackTrace();
+       }
+    }
+ }
+```
+
+Spring framework
+
+```
+<bean name="ObjFactory" class="ObjFactory" />
+<bean name="Circle" class="Circle" />
+```
+  * Circle
+
+```
+public class Circle {
+ @Override
+ public void draw() {
+    System.out.println("Inside Circle::draw() method.");
+ }
+}
+```
+
+  * ObjFactory
+
+
+```
+public class ObjFactory implements ApplicationContextAware {
+    private static ApplicationContext mApplicationContext;
+    private static Map<String, String> processorBeanMap = new HashMap<String, String>();
+    public static Circle getCircle() {
+        String beanName = processorBeanMap.get();
+        Circle bean = (Circle) mApplicationContext.getBean(beanName);
+        return bean;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext ac) throws BeansException {
+        mApplicationContext = ac;
+        Map<String, Circle> processorMap = mApplicationContext.getBeansOfType(Circle.class);
+        if (processorMap.isEmpty()) {
+            Error noProcessorError = new Error("No Circle configured. Check Spring Context");
+            throw noProcessorError;
+        }
+        Set<Entry<String, Circle>> processorEntrySet = processorMap.entrySet();
+        Iterator<Entry<String, Circle>> iterator = processorEntrySet.iterator();
+        while (iterator.hasNext()) {
+            Entry<String, Circle> entry = iterator.next();
+            processorBeanMap.put(entry.getValue().getClass().getSimpleName(), entry.getKey());
+        }
+    }
+}
+```
+
+
+
+
+Limitaciones:
+
+* Las clases AbstractFactories deben declarar todos los metodos abstractos de todas las fábricas. Esto puede complejizar el código.
+* Las clases que implementan las fábricas deben retornar null para aquellos métodos de fabricas a las que no pertenecen.
+
+Ventajas:
+
+* El patron se usa cuando existen clases polimórficas que tienen instanciaciónes diferentes y se desea que algún módulo cree instancias y las use, sin conocer los detalles de la instanciación de objetos.
+* En ausencia del patron Abstract Factory, el Cliente necesita conocer detalles de clases concretas. Este tight coupling puede ser eliminado si se usa el patrón.
+* Permite realizar Inversión de Control (IoC) fácilmente
+* Hace su código más testeable al poder mockear interfaces.
+* Incrementa la flexibilidad cuando llega el momento de cambiar la aplicación (es decir, puedes crear nuevas implementaciones sin cambiar el código dependiente)
+
+
+
+Bibliografia
+
+[Head First Design Patterns](http://shop.oreilly.com/product/9780596007126.do)
+
+[Gang Of Four - Design Patterns, Elements Of Reusable Object Oriented Software](https://www.amazon.co.uk/Design-patterns-elements-reusable-object-oriented-x/dp/0201633612)
+
+[JAVA Desing Patterns](http://www.apress.com/us/book/9781484218013)
 [iluwatar git](https://github.com/iluwatar/java-design-patterns/tree/master/factory-method)
+
 [kamranahmedse git](https://github.com/kamranahmedse/design-patterns-for-humans/blob/master/README.md#-factory-method)
+
 [TutorialsPoint](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)
+
 [UAI]()
+
 [stackoverflow](https://stackoverflow.com/questions/2280170/why-do-we-need-abstract-factory-design-pattern)

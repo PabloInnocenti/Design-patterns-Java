@@ -159,3 +159,15 @@ Credits
 [kamranahmedse git](https://github.com/kamranahmedse/design-patterns-for-humans/blob/master/README.md#-factory-method)
 [TutorialsPoint](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)
 [UAI]()
+
+Patrón Abstract Factory
+
+Motivación
+Aplicabilidad
+Estructura, colaboraciones
+Consecuencias
+Con ejemplo en Java.
+Mencionar como en Spring los factories se usan para desacoplar los hotspots de las clases que los implementan.
+Informe:
+
+ - Rol de los patrones creacionales en los frameworks. Ejemplos. 
